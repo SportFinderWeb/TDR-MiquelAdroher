@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Sport Finder - Troba el teu esport ideal!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="20" cy="20" r="18" fill="white" opacity="0.2"/>
+                    <path d="M20 5C11.716 5 5 11.716 5 20C5 28.284 11.716 35 20 35C28.284 35 35 28.284 35 20C35 11.716 28.284 5 20 5ZM20 32C13.373 32 8 26.627 8 20C8 13.373 13.373 8 20 8C26.627 8 32 13.373 32 20C32 26.627 26.627 32 20 32Z" fill="white"/>
+                    <path d="M20 12L23 18H17L20 12Z" fill="white"/>
+                    <path d="M20 28L17 22H23L20 28Z" fill="white"/>
+                    <path d="M12 20L18 17V23L12 20Z" fill="white"/>
+                    <path d="M28 20L22 23V17L28 20Z" fill="white"/>
+                </svg>
+                <span>Sport Finder</span>
+                <span class="author-text">TDR - Miquel Adorher Viñas</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div id="home-page" class="page active">
+            <h1>Troba el teu esport ideal!</h1>
+            <p class="intro">Respon aquest qüestionari personalitzat per descobrir quins esports s'adapten millor a les teves preferències, estil de vida i característiques físiques.</p>
+            <button class="btn-primary" onclick="startQuestionnaire()">Començar qüestionari</button>
+        </div>
+
+        <div id="questionnaire-page" class="page">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress"></div>
+            </div>
+            <div class="question-container" id="question-container"></div>
+            <div class="navigation-buttons">
+                <button class="btn-secondary" id="prev-btn" onclick="previousQuestion()">Anterior</button>
+                <button class="btn-primary" id="next-btn" onclick="nextQuestion()">Següent</button>
+            </div>
+        </div>
+
+        <div id="results-page" class="page">
+            <h1>Els teus esports recomanats</h1>
+            <div id="user-summary" class="user-summary"></div>
+            <div id="results-container" class="results-grid"></div>
+            <div class="action-buttons">
+                <button class="btn-secondary" onclick="downloadResults()">📥 Descarregar resultats</button>
+                <button class="btn-secondary" onclick="copyResults()">📋 Copiar al portapapers</button>
+                <button class="btn-primary" onclick="restartQuestionnaire()">🔄 Reiniciar qüestionari</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
